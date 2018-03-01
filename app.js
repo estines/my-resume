@@ -9,7 +9,15 @@ const port = process.env.PORT || 3000
 const app = new koa()
 const router = new Router()
     .get('/api', async ctx => {
-        ctx.body = `Hello API555`
+        ctx.body = [
+            { test: 123456 },
+            { test: 5555 },
+            { test: 5555 },
+            { test: 5555 },
+            { test: 5555 },
+            { test: 5555 },
+            { test: 5555 }
+        ]
     })
     //! set route before generator function!!
     .get('*', function* () {
