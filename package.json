@@ -21,8 +21,10 @@
     "serve": "nodemon app.js",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "npm install && npm run build"
   },
+  "proxy": "http://localhost:3000",
   "engines": {
     "node": "8.9.4"
   }

@@ -6,7 +6,7 @@ const numCPUs = require('os').cpus().length;
 const static = require('koa-static')
 const bodyparser = require('koa-bodyparser')
 const Router = require('koa-router')
-const port = process.env.PORT || 3000
+const PORT = process.env.PORT || 3000
 
 if (cluster.isMaster) {
     console.error(`Node cluster master ${process.pid} is running`);
@@ -43,7 +43,7 @@ if (cluster.isMaster) {
     app.use(static(path.resolve(__dirname, 'build')))
     app.use(bodyparser())
     app.use(router.routes())
-    app.listen(port, () => {
-        console.log(`This application is running on port ${port}`)
+    app.listen(PORT, () => {
+        console.log(`This application is running on PORT ${PORT}`)
     })
 }
