@@ -17,11 +17,12 @@
     "redux": "^3.7.2"
   },
   "scripts": {
-    "start": "set PORT=3006 && react-scripts start && node app.js",
+    "start": "node app.js",
     "serve": "nodemon app.js",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "webpack -p --config ./webpack.prod.config.js --progress"
   },
   "engines": {
     "node": "8.9.4"
