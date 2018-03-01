@@ -36,11 +36,11 @@ if (cluster.isMaster) {
             ]
         })
         //! set route before generator function!!
-        .get('*', function* () {
-            this.body = fs.readFileSync(path.resolve(path.join('build', 'index.html')), 'utf-8')
+        .get('*', async ctx => {
+            ctx.body = fs.readFileSync(path.resolve(path.join('build', 'index.html')), 'utf-8')
         })
 
-    app.use(static(path.resolve(__dirname, 'build', 'index.html')))
+    app.use(static(path.resolve(__dirname, 'build')))
     app.use(bodyparser())
     app.use(router.routes())
     app.listen(port, () => {
