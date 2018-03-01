@@ -11,11 +11,10 @@ class Test extends Component {
     }
 
     async fetchData() {
-        let result = await fetch('http://localhost:3000/api').then(item => { return item.json() })
+        let result = await fetch('/api').then(item => { return item.json() })
         this.setState({
             data: [...result]
         })
-        console.log(result)
     }
 
     render() {
